@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#ffffff">
+  <title>ALONG 181</title>
+  <link rel="stylesheet" href="style.css?v=8">
+</head>
+<body data-mode="draw" data-state="drawing" data-theme="purple">
+  <main class="poster">
+
+    <header class="masthead">
+      <h1 class="title">ALONG 181</h1>
+      <i class="masthead__line" aria-hidden="true"></i>
+    </header>
+
+    <section class="stage">
+      <canvas id="backdrop" aria-hidden="true"></canvas>
+      <div class="window" id="window">
+        <span class="piece piece--a" aria-hidden="true"></span>
+        <span class="piece piece--b" aria-hidden="true"></span>
+        <div class="window__glass" id="glass">
+          <canvas id="canvas" aria-label="車窗繪圖區"></canvas>
+          <canvas id="live" aria-hidden="true"></canvas>
+          <div class="window__reflection" aria-hidden="true"></div>
+          <div class="window__prompt" id="prompt">
+            <svg class="prompt__guide" viewBox="0 0 400 260" aria-hidden="true">
+              <polygon points="60,70 150,28 290,48 362,120 332,202 200,236 88,206 38,140"/>
+            </svg>
+            <p class="prompt__main">請畫出隨機的形狀</p>
+            <p class="prompt__sub">用一筆，畫出屬於你的車窗。</p>
+            <p class="prompt__en">Draw your own window.</p>
+          </div>
+          <div class="window__hint" id="hint" aria-live="polite"></div>
+          <div class="live__count" id="count" aria-live="assertive"></div>
+          <div class="live__flash" id="flash" aria-hidden="true"></div>
+          <div class="live__msg" id="camMsg" aria-live="polite"></div>
+        </div>
+        <div class="tag" aria-hidden="true">每個人搭上 181，看見的都不是同一扇窗。</div>
+      </div>
+      <i class="dot dot--a" aria-hidden="true"></i>
+      <i class="dot dot--b" aria-hidden="true"></i>
+      <i class="dot dot--c" aria-hidden="true"></i>
+      <div class="infocard" aria-hidden="true">
+        <b>ALONG 181</b>
+        <span style="display: block;">ONE ROUTE<br>47 PEOPLE<br>47 STORIES</span>
+        <small>每個人搭上 181<br>看見的都不是同一扇窗。</small>
+      </div>
+      <div class="paper" aria-hidden="true"></div>
+    </section>
+
+    <footer class="controls">
+      <button class="btn btn--ghost" id="btnClear" type="button">清除</button>
+      <button class="btn btn--solid" id="btnDone" type="button" disabled>完成</button>
+      <button class="btn btn--solid" id="btnShot" type="button" hidden>拍照</button>
+      <button class="btn btn--ghost" id="btnSave" type="button" hidden>存成圖片</button>
+      <button class="btn btn--solid" id="btnAgain" type="button" hidden>返回原畫面</button>
+    </footer>
+
+  </main>
+  <!-- 相機與背景影片（不顯示，只供畫面合成使用） -->
+  <video id="cam" class="media-hidden" muted playsinline></video>
+  <video id="bgvideo" class="media-hidden" muted loop playsinline preload="auto"></video>
+  <script src="script.js?v=8"></script>
+</body>
+</html>
